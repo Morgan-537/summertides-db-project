@@ -69,3 +69,32 @@ CREATE TABLE stages(
     location TEXT NOT NULL
 
 );
+
+-- PERFORMANCES TABLE
+
+CREATE TABLE performances(
+
+    performance_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    artist_id INTEGER NOT NULL,
+
+    stage_id INTEGER NOT NULL,
+
+    performance_date TEXT NOT NULL,
+
+    start_time TEXT NOT NULL,
+
+    end_time TEXT NOT NULL,
+
+
+    FOREIGN KEY(artist_id)
+    REFERENCES artists(artist_id),
+
+
+    FOREIGN KEY(stage_id)
+    REFERENCES stages(stage_id)
+
+);
+
+
+
